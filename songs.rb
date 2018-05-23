@@ -1,11 +1,4 @@
-class Artist
-  
-  attr_reader :name
-
-  def initialize(name)
-    @name = name
-  end
-end
+require_relative 'artist'
 
 class Song
 
@@ -27,26 +20,14 @@ class Song
 
 end
 
-billy_joel = Artist.new('Billy Joel')
+@bill_joel = Artist.new('Billy Joel')
+@bill_joel.create_song('Honesty', 197)
+@bill_joel.create_song('Allentown', 243)
+@bill_joel.create_song("We didn't start the Fire", 178)
+@bill_joel.create_song("Goodnight Saigon", 302)
+
 motley_crue = Artist.new('Motley Crew')
+motley_crue.create_song('Wild Side', 254)
+
 skid_row = Artist.new('Skid Row')
-
-song_1 = Song.new('Honesty', 197, billy_joel)
-song_2 = Song.new('Wild Side', 254, motley_crue)
-song_3 = Song.new('Youth Gone Wild', 238, skid_row)
-
-
-puts "Song Names"
-puts song_1.name
-puts song_2.name
-puts song_3.name
-
-puts "Song Durations"
-puts song_1.duration
-puts song_2.duration
-puts song_3.duration
-
-puts "Full description"
-puts song_1.full_description
-puts song_2.full_description
-puts song_3.full_description
+skid_row.create_song('Youth Gone Wild', 238)
